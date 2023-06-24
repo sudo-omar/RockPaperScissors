@@ -14,11 +14,45 @@
             return (random == 0 ? 'rock' 
                 : random == 1 ? 'paper' 
                 : 'scissors' );
-            
         }
+
         function playRound(playerSelection, computerSelection) {
-            
+            return (playerSelection == computerSelection ? `tie` 
+                    : playerSelection == 'rock' && computerSelection == 'paper' 
+                    ? youLose(playerSelection, computerSelection)
+                    : playerSelection == 'rock' && computerSelection == 'scissors' 
+                    ? youWin(playerSelection, computerSelection)
+                    : playerSelection == 'paper' && computerSelection == 'rock'
+                    ? youWin(playerSelection, computerSelection)
+                    : playerSelection == 'paper' && computerSelection == 'scissors'
+                    ? youLose(playerSelection, computerSelection) 
+                    : playerSelection == 'scissors' && computerSelection == 'rock' 
+                    ? youLose(playerSelection, computerSelection)
+                    //last possible case is player: scissors & computer: paper
+                    : youWin(playerSelection, computerSelection) );
+
         }
+        //helper method for playRound()
+        function youLose(playerSelection, computerSelection) {
+            //capitalize first letter of rock, paper, and sciscors
+            let playerChoice = playerSelection.substring(0, 1).toUpperCase() + playerSelection.substring(1);
+            let computerChoice = computerSelection.substring(0, 1).toUpperCase() + computerSelection.substring(1);
+            //returns lose stamtent with capitalized rock, paper, and scissors
+            return `You Lose! ${computerSelection} beats ${playerChoice}`
+        }
+        //helper method for playRound()
+        function youWin(playerSelection, computerSelection) {
+            //capitalize first letter of rock, paper, and sciscors
+            let playerChoice = playerSelection.substring(0, 1).toUpperCase() + playerSelection.substring(1);
+            let computerChoice = computerSelection.substring(0, 1).toUpperCase() + computerSelection.substring(1);
+            //returns win stamtent with capitalized rock, paper, and scissors
+            return `You Win! ${playerChoice} beats ${computerChoice}`
+        }
+        const computerSelection = getComputerChoice();
+
+        console.log(`rock ${computerSelection}`);
+        console.log(playRound('rock', computerSelection));
+        
        
     </script>
 </body>
