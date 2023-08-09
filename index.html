@@ -19,7 +19,9 @@
         </div>
         <div id="computerChoice">
             <h5>Computer Choice:</h5>
-            <img src="photos/question.png">
+            <div id="oppImg">
+                <img src="photos/question.png">
+            </div>
         </div>
     </div>
     <div id="scores">
@@ -30,8 +32,8 @@
     <h1 id="outcome">placeholder for outcome</h1>
 
     <script>
-       // const computerSelection = getComputerChoice();
-/*
+       const computerSelection = getComputerChoice();
+
         function getComputerChoice() {
             let random = Math.floor(Math.random() * 3);
             let result = "temp";
@@ -40,7 +42,7 @@
                 : 'scissors' );
         }
 
-
+/*
         function playRound(playerSelection, computerSelection) {
             return (playerSelection == computerSelection ? `tie` 
                     : playerSelection == 'rock' && computerSelection == 'paper' 
@@ -57,22 +59,7 @@
                     : youWin(playerSelection, computerSelection) );
 
         }
-        //helper method for playRound()
-        function youLose(playerSelection, computerSelection) {
-            //capitalize first letter of rock, paper, and sciscors
-            let playerChoice = playerSelection.substring(0, 1).toUpperCase() + playerSelection.substring(1);
-            let computerChoice = computerSelection.substring(0, 1).toUpperCase() + computerSelection.substring(1);
-            //returns lose stamtent with capitalized rock, paper, and scissors
-            return `You Lose! ${computerSelection} beats ${playerChoice}`
-        }
-        //helper method for playRound()
-        function youWin(playerSelection, computerSelection) {
-            //capitalize first letter of rock, paper, and sciscors
-            let playerChoice = playerSelection.substring(0, 1).toUpperCase() + playerSelection.substring(1);
-            let computerChoice = computerSelection.substring(0, 1).toUpperCase() + computerSelection.substring(1);
-            //returns win stamtent with capitalized rock, paper, and scissors
-            return `You Win! ${playerChoice} beats ${computerChoice}`
-        }
+        
         
 */
         const rock = document.querySelector('#rock');
@@ -84,10 +71,14 @@
         
         function clicked(a) {
             console.log(a);
+            const oppImg = document.querySelector('#oppImg')
+            switch(computerSelection) {
+            	  case('rock'): oppImg.innerHTML = '<img src="placeholderforrock">'; break;
+                case('paper'): oppImg.innerHTML = '<img src="placehodlerofrpaperimqage">'; break;
+                case('scissors'): oppImg.innerHTML = '<img src="palcehoderforscisscorsimgae">'; break;
+						}
+            if() //TODO: change html/css for whichever choice is clicked
         }
-        
-        
-       
     </script>
 </body>
 </html>
