@@ -5,9 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1 id="title">Rock, Paper, Scissors</h1>
+    
+    <div id="choices">
+        <div id="yourChoice">
+            <h5>Your Choice:</h5>
+            <img src="photos/rock.png" id="rock">
+            <img src="photos/paper.png" id="paper">
+            <img src="photos/scissors.png" id="scissors">   
+        </div>
+        <div id="computerChoice">
+            <h5>Computer Choice:</h5>
+            <img src="photos/question.png">
+        </div>
+    </div>
+    <div id="scores">
+        <h1>You: 0</h1>
+        <h1>Robot: 0</h1>
+    </div>
+    
+    <h1 id="outcome">placeholder for outcome</h1>
+
     <script>
+       // const computerSelection = getComputerChoice();
+/*
         function getComputerChoice() {
             let random = Math.floor(Math.random() * 3);
             let result = "temp";
@@ -15,6 +39,7 @@
                 : random == 1 ? 'paper' 
                 : 'scissors' );
         }
+
 
         function playRound(playerSelection, computerSelection) {
             return (playerSelection == computerSelection ? `tie` 
@@ -48,10 +73,19 @@
             //returns win stamtent with capitalized rock, paper, and scissors
             return `You Win! ${playerChoice} beats ${computerChoice}`
         }
-        const computerSelection = getComputerChoice();
-
-        console.log(`rock ${computerSelection}`);
-        console.log(playRound('rock', computerSelection));
+        
+*/
+        const rock = document.querySelector('#rock');
+        rock.addEventListener('click', () => clicked('rock'));
+        const paper = document.getElementById('paper');
+        paper.addEventListener('click', () => clicked('paper'));
+        const scissors = document.getElementById('scissors');
+        scissors.addEventListener('click', () => clicked('scissors'));
+        
+        function clicked(a) {
+            console.log(a);
+        }
+        
         
        
     </script>

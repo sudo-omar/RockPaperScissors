@@ -1,0 +1,32 @@
+body {
+    background-color: lightblue;
+}
+#choices, #scores {
+    display: flex;
+    justify-content: space-around;
+}
+img {
+    width: 100px;
+    
+}
+#yourChoice {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#computerChoice {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.title {
+    text-align: center;
+}
+
+#question {
+    text-align: center;
+}
+
