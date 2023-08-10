@@ -7,12 +7,16 @@ body {
 }
 img {
     width: 100px;
-    
 }
+
 #yourChoice {
     display: flex;
     flex-direction: column;
     gap: 25px;
+}
+.choice:hover {
+    width: 150px;
+    transition: all 2s;
 }
 
 #computerChoice {
@@ -31,6 +35,15 @@ img {
 }
 
 .pop {
-    box-shadow: 3px 3px 5px 6px yellow;
-    background-color: yellow;
+    width: 150px;
+    transition: all 2s;
 }
+#rock, #paper, #scissors {
+    transition: all 2s;
+}
+
+#outcome {
+    text-align: center;
+}
+
+
