@@ -13,7 +13,7 @@
     <div id="choices">
         <div id="yourChoice">
             <h5>Your Choice:</h5>
-            <img src="photos/rock.png" id="rock">
+            <img src="photos/rock.png" id="rock" class="this">
             <img src="photos/paper.png" id="paper">
             <img src="photos/scissors.png" id="scissors">   
         </div>
@@ -25,14 +25,14 @@
         </div>
     </div>
     <div id="scores">
-        <h1>You: 0</h1>
-        <h1>Robot: 0</h1>
+        <h1 id="you">You: 0</h1>
+        <h1 id="robot">Robot: 0</h1>
     </div>
     
     <h1 id="outcome">placeholder for outcome</h1>
 
     <script>
-       const computerSelection = getComputerChoice();
+       
 
         function getComputerChoice() {
             let random = Math.floor(Math.random() * 3);
@@ -62,22 +62,66 @@
         
         
 */
-        const rock = document.querySelector('#rock');
+        const rock = document.getElementById('rock');
         rock.addEventListener('click', () => clicked('rock'));
         const paper = document.getElementById('paper');
         paper.addEventListener('click', () => clicked('paper'));
         const scissors = document.getElementById('scissors');
         scissors.addEventListener('click', () => clicked('scissors'));
-        
-        function clicked(a) {
-            console.log(a);
+
+        const youElement = document.getElementById('you');
+        let you = 0;
+        const robotElement = document.getElementById('robot');
+        let robot = 0;
+        let round = 0;
+
+        //when clicked, the round is made
+        function clicked(imgClicked) {
+            //turn off all prior pop css effects 
+            if(rock.classList.contains('pop')) { rock.classList.remove('pop'); }
+            if(paper.classList.contains('pop')) { paper.classList.remove('pop'); }
+            if(scissors.classList.contains('pop')) { scissors.classList.remove('pop'); }
+            //tunr on pop css effect to img which is clicked
+            if(imgClicked == 'rock') {
+                rock.classList.toggle('pop');
+            } else if(imgClicked == 'paper') {
+                paper.classList.toggle('pop');
+            } else {
+                scissors.classList.toggle('pop');
+            }
+            round++;
+            //logic for who wins
+            const computerSelection = getComputerChoice();
+            if(imgClicked == computerSelection) {
+                
+            } else if (imgClicked == 'rock' && computerSelection == 'paper') {
+                robot++;
+                robotElement.innerText = `Robot: ${robot}`;
+            } else if (imgClicked == 'rock' && computerSelection == 'scissors') {
+                you++;
+                youElement.innerText = `You: ${you}`;
+            } else if(imgClicked == 'paper' && computerSelection == 'rock') {
+                you++;
+                youElement.innerText = `You: ${you}`;
+            } else if(imgClicked == 'paper' && computerSelection == 'scissors') {
+                robot++;
+                robotElement.innerText = `Robot: ${robot}`;
+            } else if(imgClicked == 'scissors' && computerSelection == 'rock') {
+                robot++;
+                robotElement.innerText = `Robot: ${robot}`;
+            } else if(imgClicked == 'scissors' && computerSelection == 'paper') {
+                you++;
+                youElement.innerText = `You: ${you}`;
+            }
+
+            
             const oppImg = document.querySelector('#oppImg')
             switch(computerSelection) {
-            	  case('rock'): oppImg.innerHTML = '<img src="placeholderforrock">'; break;
-                case('paper'): oppImg.innerHTML = '<img src="placehodlerofrpaperimqage">'; break;
-                case('scissors'): oppImg.innerHTML = '<img src="palcehoderforscisscorsimgae">'; break;
-						}
-            if() //TODO: change html/css for whichever choice is clicked
+            	case('rock'): oppImg.innerHTML = '<img src="photos/rock.png">'; break;
+                case('paper'): oppImg.innerHTML = '<img src="photos/paper.png">'; break;
+                case('scissors'): oppImg.innerHTML = '<img src="photos/scissors.png">'; break;
+			}
+            
         }
     </script>
 </body>
