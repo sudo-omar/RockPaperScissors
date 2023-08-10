@@ -32,8 +32,7 @@
     <h1 id="outcome"></h1>
 
     <script>
-       
-
+    
         function getComputerChoice() {
             let random = Math.floor(Math.random() * 3);
             let result = "temp";
@@ -104,7 +103,6 @@
                 youElement.innerText = `You: ${you}`;
             }
 
-            
             const oppImg = document.querySelector('#oppImg')
             switch(computerSelection) {
             	case('rock'): oppImg.innerHTML = '<img src="photos/rock.png">'; break;
@@ -112,17 +110,11 @@
                 case('scissors'): oppImg.innerHTML = '<img src="photos/scissors.png">'; break;
 			}
 
-            
-            
             if(you >= 5 && robot < 5) {
                 outcome.innerText = "You won!";
             } else if (you < 5 && robot >= 5) {
                 outcome.innerText = "You Lost!";
             }
-            
-
-            
-            
         }
     </script>
 </body>
