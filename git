@@ -1,0 +1,41 @@
+[33mcommit 8d91b6e4bf798920bd79a05cda38330a7f924922[m[33m ([m[1;36mHEAD -> [m[1;32mrps-ui[m[33m)[m
+Author: Omar Abou-Harb <60022342+sudo-omar@users.noreply.github.com>
+Date:   Thu Aug 10 12:58:45 2023 -0700
+
+    add js logic and some dom manipulation
+
+[33mcommit a64348322fb47f0bbfe15e76b50fbf3effca7e4c[m[33m ([m[1;31morigin/rps-ui[m[33m)[m
+Author: sudo-omar <60022342+sudo-omar@users.noreply.github.com>
+Date:   Wed Aug 9 16:09:06 2023 -0700
+
+    changes image for opponent index.html
+
+[33mcommit 58a15e084114d5b3eb1113f8bed2b0fe95aa59ec[m
+Author: Omar Abou-Harb <60022342+sudo-omar@users.noreply.github.com>
+Date:   Wed Aug 9 14:30:01 2023 -0700
+
+    some ui
+
+[33mcommit 662da4c0c03904f81320cd13beb892a6febc3258[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Omar Abou-Harb <60022342+sudo-omar@users.noreply.github.com>
+Date:   Sat Jun 24 14:16:34 2023 -0700
+
+    added playRound() function, youLose() helper method, youWin() helper method
+
+[33mcommit 0d506550a643a18d685aacef37502eecb8956ae7[m
+Author: Omar Abou-Harb <60022342+sudo-omar@users.noreply.github.com>
+Date:   Fri Jun 23 14:35:15 2023 -0700
+
+    corrected if statment & setup function header for playing a round
+
+[33mcommit 90dda03b6411daa45eed9dd47d1b996628cbbee2[m
+Author: Omar Abou-Harb <60022342+sudo-omar@users.noreply.github.com>
+Date:   Fri Jun 23 14:20:37 2023 -0700
+
+    added random computer choice
+
+[33mcommit bc9fc645ced2ea977bbf3de871b177d7763e70c4[m
+Author: sudo-omar <60022342+sudo-omar@users.noreply.github.com>
+Date:   Fri Jun 23 14:05:28 2023 -0700
+
+    Initial commit

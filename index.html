@@ -42,26 +42,6 @@
                 : 'scissors' );
         }
 
-/*
-        function playRound(playerSelection, computerSelection) {
-            return (playerSelection == computerSelection ? `tie` 
-                    : playerSelection == 'rock' && computerSelection == 'paper' 
-                    ? youLose(playerSelection, computerSelection)
-                    : playerSelection == 'rock' && computerSelection == 'scissors' 
-                    ? youWin(playerSelection, computerSelection)
-                    : playerSelection == 'paper' && computerSelection == 'rock'
-                    ? youWin(playerSelection, computerSelection)
-                    : playerSelection == 'paper' && computerSelection == 'scissors'
-                    ? youLose(playerSelection, computerSelection) 
-                    : playerSelection == 'scissors' && computerSelection == 'rock' 
-                    ? youLose(playerSelection, computerSelection)
-                    //last possible case is player: scissors & computer: paper
-                    : youWin(playerSelection, computerSelection) );
-
-        }
-        
-        
-*/
         const rock = document.getElementById('rock');
         rock.addEventListener('click', () => clicked('rock'));
         const paper = document.getElementById('paper');
