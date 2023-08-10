@@ -29,7 +29,7 @@
         <h1 id="robot">Robot: 0</h1>
     </div>
     
-    <h1 id="outcome">placeholder for outcome</h1>
+    <h1 id="outcome"></h1>
 
     <script>
        
@@ -57,6 +57,16 @@
 
         //when clicked, the round is made
         function clicked(imgClicked) {
+            const outcome = document.getElementById('outcome');
+            //reset prior scores once a win occurs 
+            if(you == 5 || robot == 5) {
+                you = 0;
+                robot = 0;
+                youElement.innerText = `You: ${you}`;
+                robotElement.innerText = `Robot: ${robot}`;
+                outcome.innerText = "";
+
+            }
             //turn off all prior pop css effects 
             if(rock.classList.contains('pop')) { rock.classList.remove('pop'); }
             if(paper.classList.contains('pop')) { paper.classList.remove('pop'); }
@@ -101,6 +111,17 @@
                 case('paper'): oppImg.innerHTML = '<img src="photos/paper.png">'; break;
                 case('scissors'): oppImg.innerHTML = '<img src="photos/scissors.png">'; break;
 			}
+
+            
+            
+            if(you >= 5 && robot < 5) {
+                outcome.innerText = "You won!";
+            } else if (you < 5 && robot >= 5) {
+                outcome.innerText = "You Lost!";
+            }
+            
+
+            
             
         }
     </script>
